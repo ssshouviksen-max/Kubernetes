@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mypod
+spec:
+  volumes:
+    - name: myvolume
+      hostPath:
+        path: /home/aswin/pod-vol   # This should be changed according to the required directory
+
+  containers:
+    - name: mynginx-container
+      image: nginx
+      volumeMounts:
+        - name: myvolume
+          mountPath: "/usr/share/nginx/html"  #"/usr/share/nginx/html" this path is now mapped to volume.so all data stored in will be directly stored in our volume
