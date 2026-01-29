@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: myapp
+spec:
+ containers:
+     - name: webapps
+       image: nginx
+       readinessProbe:
+         httpGet:
+          path: /image
+          port: 8080
