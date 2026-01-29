@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata: 
+  name: my-firstreplicaset
+spec:
+  replicas: 2   # Defining number of replicas required at all time
+  selector:
+    matchLabels:  # Based on this selector, kubernetes knows the number of pods currently available
+      tier: frontend
+  template:
+    metadata:
+      labels:
+        tier: frontend
+    spec:
+      containers:  # Container
+      - name: mywebserver
+        image: nginx
+
+# Note: replicas: 2  - This means 2 instance of our pod is available at all time.
