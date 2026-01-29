@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-first-taint
+spec:
+  containers:
+    - name: mywebserver
+      image: nginx
+
+  tolerations:
+    - key: type
+      operator: "Equal"
+      value: SSD
+      effect: "NoSchedule"
+
+
+
+Note : Taint is applied to Nodes
+
+Tolerations are applied to pods
+
+Here toleration is : type=SSD
