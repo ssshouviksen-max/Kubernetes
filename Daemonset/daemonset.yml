@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata: 
+  name: my-firstdaemonset
+spec:
+  
+  selector:  # To find the pod with matching label tire=frontend
+    matchLabels:
+      tier: frontend
+  template:
+    metadata:
+      labels:   # label of the pod
+        tier: frontend
+    spec:
+      containers:
+      - name: mywebserver
+        image: nginx
+
+
+Note: Daemon set will create a single instance of POD in all the NODE
+Usecase: An antivirus agent that should be run on all node 
