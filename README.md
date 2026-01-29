@@ -1,2 +1,2 @@
 # Kubernetes
-Useful yaml files to create kubernetes resources
+Handy commands for Kubernetes Administration
