@@ -1,0 +1,7 @@
+apiVerdion: v1
+kind: ConfigMap
+meatadata:
+  name: apache-config
+data:
+  APP_COLOR: blue
+  APP_MODE: prod
