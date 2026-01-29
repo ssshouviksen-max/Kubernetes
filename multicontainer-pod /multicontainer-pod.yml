@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata: 
+  name: my-first-multicontainer-pod
+spec:
+  containers:    #Here we define the multiple container details
+    - name: mywebserver # First container of nginx
+      image: nginx 
+    - name: another-web-server # Second container of httpd
+      image: httpd
+      
+      
+    
