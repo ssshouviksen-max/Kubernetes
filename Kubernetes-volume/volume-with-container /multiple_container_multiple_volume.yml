@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mypod-with-two-container
+spec:
+  
+  volumes:
+    - name: myvolume-1
+      hostPath:
+        path: /home/aswin/pod-vol-1
+    - name: myvolume-2
+      hostPath:
+        path: /home/aswin/pod-vol-2
+
+  containers:
+    - name: mynginx-container-1
+      image: nginx
+      volumeMounts:
+        - name: myvolume-1
+          mountPath: "/usr/share/nginx/html"
+
+ 
+    - name: mynginx-container-2
+      image: nginx
+      volumeMounts:
+        - name: myvolume-2
+          mountPath: "/usr/share/nginx"
