@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata: 
+  name: my-pod
+spec:
+  containers:
+    - name: mywebserver
+      image: nginx
+
+      envFrom:
+        - configMapRef:
+            name: apache-config   //name of config map created
