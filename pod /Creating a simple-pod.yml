@@ -1,0 +1,13 @@
+Create a simple POD
+
+apiVersion: v1  #api version of pod 
+kind: Pod 
+metadata: 
+  name: my-firstpod   #Pod name
+spec:
+  containers:
+    - name: mywebserver   #Name of the container
+      image: nginx	  #Docker images name. Images are pulled from : https://hub.docker.com
+
+  
+      
